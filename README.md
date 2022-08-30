@@ -1,22 +1,15 @@
 # SFDrugs
-This is a Slimefun addon, for 1.19.2. It allows you
-to create drugs, and other wacky, stupid things.
+这是一个 Slimefun 插件，为1.19.2。 它允许你 创造毒品和其他愚蠢的东西。
 
-## FAQ
-# How do I get started?
-A: Create a Compounder. Everything you need
-to create drugs come from the compounder.
+## 常见问题
+# 该如何开始呢？
+甲：创建一个Compounder。 你需要 来创造药物的一切都来自大院。
 
-# How do I get the Corporate gear?
-A: Currently you cannot. In the future,
-There will be a boss fight in the future who
-drops an interfacing terminal.
+# 如何获得公司装备？
+回答：目前您不能。 今后， 将来会有一场老板战斗， 会掉落一个接口终端。
 
-# How do I progress past making Methamphetamine?
-A: Create cyanide, then make the wooden hoe.
-Right click, then it spawns a rudementary trader, which you can
-get items from. 
+# 我如何在制造甲基安非他明之前取得进展？
+甲：创建氰化物，然后制造木头鞋。 右键点击后，它会产生一个初级交易者，你可以 从中获取物品。
 
-# Where can I go to suggest new additions?
-A: Either create a pull request, or
-go to my discord at https://discord.gg/R4TPSvs2ZP.
+# 我在哪里可以提出新的额外建议？
+A: Either create a pull request, or go to my discord at https://discord.gg/R4TPSvs2ZP.
