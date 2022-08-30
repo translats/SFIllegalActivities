@@ -45,7 +45,7 @@ public class DrugSuit extends SlimefunArmorPiece implements ProtectiveArmor, Rec
 		Inventory I = p.getInventory();
 		int Wearing = 0;
 		for (int i = 5; i <= 8 ;i++) {
-			if (I.getItem(i).getItemMeta().getDisplayName().contains("Corporate Hazmat")) {
+			if (I.getItem(i).getItemMeta().getDisplayName().contains("企业危险品")) {
 				Wearing += 1;
 			}
 		}
@@ -79,7 +79,7 @@ public class DrugSuit extends SlimefunArmorPiece implements ProtectiveArmor, Rec
 			if(this.removeItemCharge(item, new Float(dmg))) {
 				p.getWorld().playEffect(p.getLocation(), Effect.ELECTRIC_SPARK,Axis.Y);
 				p.getWorld().playSound(p.getLocation(), Sound.BLOCK_ANVIL_PLACE, 0.4F, 0.5F);
-				new Speak(p,"&7&l[ Internal Radio ]: Blocked " + Double.toString(dmg/2) + " damage.");
+				new Speak(p,"&7&l[ 内部广播 ]: 阻挡 " + Double.toString(dmg/2) + " 伤害.");
 				e.setDamage(dmg / 2);
 			}
 		}

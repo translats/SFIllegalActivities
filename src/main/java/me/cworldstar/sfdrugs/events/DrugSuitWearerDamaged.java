@@ -26,7 +26,7 @@ public class DrugSuitWearerDamaged implements Listener {
 			Player p = (Player) e.getEntity();
 			ItemStack item = p.getInventory().getChestplate();
 			if (SlimefunItem.getByItem(item) != null) {
-				if(item.getItemMeta().getDisplayName().contains("Corporate Hazmat")) {
+				if(item.getItemMeta().getDisplayName().contains("企业危险品")) {
 					DrugSuit T = (DrugSuit) SlimefunItem.getByItem(item);
 					T.PlayerDamaged(e,p,item,new Double(e.getFinalDamage() * 10));
 					 for(Entity enemies : p.getNearbyEntities(3.0, 3.0, 3.0)) {

@@ -65,18 +65,18 @@ public class MysteriousTraderEvent implements Listener {
         			I.getItemInMainHand().setAmount(0);
             		I.addItem(T.getFor());
             		if(new Random().nextInt(4) == 1) {
-            			Speak(p,"&c&l[ Mysterious Trader ]: &r&cOh no... They found us.. Run!");
+            			Speak(p,"&c&l[ 神秘商人 ]: &r&c哦不……他们找到了我们……快跑！");
             			p.getWorld().playEffect(event.getRightClicked().getLocation(), Effect.ENDERDRAGON_GROWL, 1);
             			p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS,40,100));
             			event.getRightClicked().remove();
             			new CorporationMobZone(this.plugin,p.getWorld(),p.getLocation());
             		} else {
-            			Speak(p,"&c&l[ Mysterious Trader ]: &r&cQuickly, take this and go!");
+            			Speak(p,"&c&l[ 神秘商人 ]: &r&c快，拿着这个走!");
             		}
         		}
 
         	} else {
-    			Speak(p,"&c&l[ Mysterious Trader ]: &r&cCome back with something of value.");
+    			Speak(p,"&c&l[ 神秘商人 ]: &r&c带着有价值的东西回来.");
             }
     	}
 

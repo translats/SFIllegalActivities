@@ -36,7 +36,7 @@ public class DrugBaton extends SimpleSlimefunItem<WeaponUseHandler> implements R
 				} 
 			} else if(e.getFinalDamage() > 0){
 				e.setDamage(e.getFinalDamage()/4);
-				new Speak(p,"&7Your baton has run out of power.");
+				new Speak(p,"&7你的指挥棒已经没电了.");
 			}
 		
 		};

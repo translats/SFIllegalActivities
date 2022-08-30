@@ -34,7 +34,7 @@ import net.md_5.bungee.api.ChatColor;
 public class CorporationEnemy {
 	private static Zombie Zombie;
 	public CorporationEnemy(SFDrugs Plugin,Zombie z) {
-		z.setCustomName(ChatColor.translateAlternateColorCodes('&', "&7&lCorporate Security Robot"));
+		z.setCustomName(ChatColor.translateAlternateColorCodes('&', "&7&l企业安全机器人"));
 		z.setCanPickupItems(false);
 		z.setMaxHealth(300.0);
 		z.setHealth(300.0);
@@ -80,13 +80,13 @@ public class CorporationEnemy {
 						case 0:
 							break;
 						case 1:
-							new Speak(z,z.getNearbyEntities(10.0, 10.0, 10.0),"&7&l[ Corporate Security Robot ]:&r &7Target Confirmed.");
+							new Speak(z,z.getNearbyEntities(10.0, 10.0, 10.0),"&7&l[ 企业安全机器人 ]:&r &7目标确认。");
 							z.getWorld().playSound(z.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_CHIME, 1F, 0.5F);
 							z.getWorld().spawnParticle(Particle.DRAGON_BREATH, z.getLocation(),30, 6, 2, 6);
 							z.getWorld().createExplosion(z.getTarget().getLocation().add(new Location(z.getWorld(),z.getTarget().getLocation().getX(),z.getTarget().getLocation().getY()+2,z.getTarget().getLocation().getZ())), 2L, false,false);
 							break;
 						case 2:
-							new Speak(z,z.getNearbyEntities(10.0, 10.0, 10.0),"&7&l[ Corporate Security Robot ]:&r &7Damage Detected. Beginning self repair.");
+							new Speak(z,z.getNearbyEntities(10.0, 10.0, 10.0),"&7&l[ 企业安全机器人 ]:&r &7检测到损坏。 开始自我修复。");
 							z.setAI(false);
 							z.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION,100,2));
 							new BukkitRunnable() {
@@ -104,7 +104,7 @@ public class CorporationEnemy {
 							}.runTaskLater(Plugin, 100L);
 							break;
 						case 3:
-							new Speak(z,z.getNearbyEntities(10.0, 10.0, 10.0),"&7&l[ Corporate Security Robot ]:&r &7Enemy located. Subjugating...");
+							new Speak(z,z.getNearbyEntities(10.0, 10.0, 10.0),"&7&l[ 企业安全机器人 ]:&r &7敌人定位。 征服...");
 							Snowball LaserProjectile = z.launchProjectile(Snowball.class);
 							LaserProjectile.setItem(new ItemStack(Material.DIAMOND_SWORD));
 							Vector source = z.getLocation().getDirection().normalize().multiply(50);

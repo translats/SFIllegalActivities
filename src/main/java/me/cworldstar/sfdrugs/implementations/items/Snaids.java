@@ -29,7 +29,7 @@ public class Snaids extends SimpleSlimefunItem<ItemUseHandler> {
 			Player p = e.getPlayer();
 			ItemStack item = e.getItem();
 			item.setAmount(item.getAmount()-1);
-			new Speak(p,"&d&lYou have snaids now. You will die in 30 seconds.");
+			new Speak(p,"&d&l你现在有snaids了。你将在30秒后死去。");
 	        new BukkitRunnable() {
 	            @Override
 	            public void run() {

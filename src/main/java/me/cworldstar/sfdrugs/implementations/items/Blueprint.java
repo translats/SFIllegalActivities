@@ -10,7 +10,7 @@ public class Blueprint {
 		this.blueprintName = BlueprintName;
 	}
 	public SlimefunItemStack getBlueprint() {
-		return new SlimefunItemStack("SFDRUGS_".concat(this.blueprintName.replace(' ', '_').toUpperCase()).concat("_BLUEPRINT"),Material.FILLED_MAP,"&7".concat(this.blueprintName).concat(" Blueprint"));
+		return new SlimefunItemStack("SFDRUGS_".concat(this.blueprintName.replace(' ', '_').toUpperCase()).concat("_BLUEPRINT"),Material.FILLED_MAP,"&7".concat(this.blueprintName).concat(" 蓝图"));
 	}
 
 }

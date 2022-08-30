@@ -29,7 +29,7 @@ public class RobotArmorDamaged implements Listener {
     	if(p.getEquipment().getChestplate() != null) {
 			ItemStack item = p.getEquipment().getChestplate();
 			if (SlimefunItem.getByItem(item) != null) {
-				if(item.getItemMeta().getDisplayName().contains("Corporate Security Robot")) {
+				if(item.getItemMeta().getDisplayName().contains("企业安全机器人")) {
 					RobotArmor T = (RobotArmor) SlimefunItem.getByItem(item);
 					T.EntityDamaged(e,p,item,new Double(e.getFinalDamage() * 10));
 					 for(Entity enemies : p.getNearbyEntities(3.0, 3.0, 3.0)) {

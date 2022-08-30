@@ -48,16 +48,16 @@ public class SFHookerEvent implements Listener {
             }.runTaskLater(plugin, 20L);
         	PlayerInventory I = p.getInventory();
         	if(I.getItemInMainHand() != null & HookerZombie.ItemIsRecipe(I.getItemInMainHand(),I.getItemInMainHand().getAmount()) == true) {
-        		Speak(p,"&d&l[ Hooker Zombie ]: &r&dOh here, take this.");
+        		Speak(p,"&d&l[ 妓女僵尸 ]: &r&d哦，拿这个。");
         		TradingRecipe T = HookerZombie.GetRecipeFromItem(SlimefunItem.getByItem(I.getItemInMainHand()).getItem(),I.getItemInMainHand().getAmount());
         		if(T != null) {
         			I.getItemInMainHand().setAmount(0);
             		I.addItem(T.getFor());
         		}
         	} else if(I.getItem(I.getHeldItemSlot()) != null) {
-    			Speak(p,"&d&l[ Hooker Zombie ]: &r&dWhat makes you think I'd like that? Go away, loser.");
+    			Speak(p,"&d&l[ 妓女僵尸 ]: &r&d是什么让你觉得我会喜欢那个？ 走开，失败者。");
             } else {
-                Speak(p,"&d&l[ Hooker Zombie ]: &r&dWhat are you trying to do? Handshake me? What a weirdo.");
+                Speak(p,"&d&l[ 妓女僵尸 ]: &r&d你想做什么？ 和我握手？ 真是个怪人。");
             }
     	}
     }

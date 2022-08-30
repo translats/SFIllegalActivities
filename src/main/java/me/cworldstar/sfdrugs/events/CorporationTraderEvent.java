@@ -49,16 +49,16 @@ public class CorporationTraderEvent implements Listener {
             }.runTaskLater(plugin, 20L);
         	PlayerInventory I = p.getInventory();
         	if(I.getItemInMainHand() != null & CorporationTrader.ItemIsRecipe(I.getItemInMainHand(),I.getItemInMainHand().getAmount()) == true) {
-        		Speak(p,"&7&l[ Corporation Trader ]: &r&7Pleasure doing business with you.");
+        		Speak(p,"&7&l[ 公司交易员 ]: &r&7很高兴和你合作.");
         		TradingRecipe T = CorporationTrader.GetRecipeFromItem(SlimefunItem.getByItem(I.getItemInMainHand()).getItem(),I.getItemInMainHand().getAmount());
         		if(T != null) {
         			I.getItemInMainHand().setAmount(0);
             		I.addItem(T.getFor());
         		}
         	} else if(I.getItem(I.getHeldItemSlot()) != null) {
-    			Speak(p,"&7&l[ Corporation Trader ]: &r&7That item has no value to us.");
+    			Speak(p,"&7&l[ 公司交易员 ]: &r&7那件物品对我们没有价值.");
             } else {
-                Speak(p,"&7&l[ Corporation Trader]: &r&7Can I help you with something?");
+                Speak(p,"&7&l[ 公司交易员]: &r&7我能帮你什么吗?");
             }
     	}
 

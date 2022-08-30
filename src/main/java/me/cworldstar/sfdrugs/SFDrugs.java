@@ -54,7 +54,7 @@ public class SFDrugs extends AbstractAddon implements SlimefunAddon {
     	Logger x = getLogger();
     	x.log(Level.INFO, "============================================");
     	x.log(Level.INFO, "====                                     ===");
-    	x.log(Level.INFO, "====         SF DRUGS ENABLED            ===");
+    	x.log(Level.INFO, "====          SF DRUGS 已启用             ===");
     	x.log(Level.INFO, "====             v 4.2.0                 ===");
     	x.log(Level.INFO, "====         by China Worldstar          ===");
     	x.log(Level.INFO, "====                                     ===");

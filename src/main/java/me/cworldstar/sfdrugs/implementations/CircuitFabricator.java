@@ -36,7 +36,7 @@ public class CircuitFabricator extends AContainer implements NotHopperable,Recip
 	public ItemStack getProgressBar() {
 		// TODO Auto-generated method stub
 		ItemStack ProgressBar = new ItemStack(Material.ANVIL);
-		ProgressBar.getItemMeta().setDisplayName(ChatColor.translateAlternateColorCodes('&', "&6&lForging..."));
+		ProgressBar.getItemMeta().setDisplayName(ChatColor.translateAlternateColorCodes('&', "&6&l伪造..."));
 		return ProgressBar;
 	}
 

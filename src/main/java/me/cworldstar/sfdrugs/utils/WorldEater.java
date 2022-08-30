@@ -51,7 +51,7 @@ public class WorldEater extends SimpleSlimefunItem<ToolUseHandler> implements Ra
                     }*/
                     b.breakNaturally(tool);
             	} else {
-            		p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&l[ SFDrugs ]: &dYour tool has run out of power!"));
+            		p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&l[ SFDrugs ]: &d你的工具没电了!"));
             		e.setCancelled(true);
             	}
         };

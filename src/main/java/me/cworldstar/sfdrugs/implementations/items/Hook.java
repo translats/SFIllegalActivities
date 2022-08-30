@@ -44,7 +44,7 @@ public class Hook extends SimpleSlimefunItem<ItemUseHandler> {
 					}
 				}.runTaskTimerAsynchronously(this.plugin, 0, 20L);
 				Player z = e.getPlayer();
-				new Speak(z,z.getNearbyEntities(15.0, 15.0, 15.0),"&cCome over here!");
+				new Speak(z,z.getNearbyEntities(15.0, 15.0, 15.0),"&c过来这里!");
 				z.getLastDamageCause().getEntity().teleport(z.getLocation().add(new Random().nextInt(3), 0, new Random().nextInt(3)));
 				z.getWorld().playSound(z.getLastDamageCause().getEntity().getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 0.5F, 0.5F);
 				z.setInvulnerable(true);

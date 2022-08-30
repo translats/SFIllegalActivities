@@ -30,7 +30,7 @@ public class Decay {
 		for(PotionEffect potion : Decay.DecayPotionEffects) {
 			p.addPotionEffect(potion);
 		}
-		new Speak(p,"&7&lYou are decaying. Consider running away.");
+		new Speak(p,"&7&l你正在腐烂。考虑逃跑吧。");
 		new BukkitRunnable() {
 			@Override
 			public void run() {

@@ -37,7 +37,7 @@ public class MoneyPrinter extends AContainer implements NotHopperable,RecipeDisp
     @Override
     public ItemStack getProgressBar() {
 		ItemStack ProgressBar = new ItemStack(Material.ANVIL);
-		ProgressBar.getItemMeta().setDisplayName(ChatColor.translateAlternateColorCodes('&', "&a&lPrinting..."));
+		ProgressBar.getItemMeta().setDisplayName(ChatColor.translateAlternateColorCodes('&', "&a&l印刷。。。"));
 		return ProgressBar;
     }
 }

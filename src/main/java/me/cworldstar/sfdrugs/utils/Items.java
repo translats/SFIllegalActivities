@@ -51,7 +51,7 @@ import net.md_5.bungee.api.ChatColor;
 
 public class Items {
 	
-	// Materials
+	// 材料
 	
 	public static final ItemStack SFDRUGS_ITEM = new CustomItemStack(Material.SUGAR,"&d&lSFDrugs","","&d> Click to open");
 	public static final SlimefunItemStack RED_PHOSPHORUS = new SlimefunItemStack("SFDRUGS_RED_PHOSPHORUS",Material.REDSTONE,"&cRed Phosphorus","","&c - Distilled meat juice.");

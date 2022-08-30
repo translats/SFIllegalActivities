@@ -39,12 +39,12 @@ import net.md_5.bungee.api.ChatColor;
 
 public class GangMember {
 	public GangMember(SFDrugs plugin,Zombie z) {
-		z.setCustomName(ChatColor.translateAlternateColorCodes('&', "&c&l&k|||&r &4&l⚠ Red Wolves Gangster ⚠&r &c&l&k|||&r"));
+		z.setCustomName(ChatColor.translateAlternateColorCodes('&', "&c&l&k|||&r &4&l⚠ 红狼黑帮 ⚠&r &c&l&k|||&r"));
 		z.setMaxHealth(750.0);
 		z.setHealth(750.0);
 		z.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE,999999,5));
 		z.setLootTable(new CorporationEnemyLootTable(plugin));
-		BossBar EnemyBossBar = Bukkit.getServer().createBossBar(ChatColor.translateAlternateColorCodes('&',"&c&l&k|||&r &4&l⚠ Red Wolves Gangster ⚠&r &c&l&k|||&r"),BarColor.RED, BarStyle.SEGMENTED_12);
+		BossBar EnemyBossBar = Bukkit.getServer().createBossBar(ChatColor.translateAlternateColorCodes('&',"&c&l&k|||&r &4&l⚠ 红狼黑帮 ⚠&r &c&l&k|||&r"),BarColor.RED, BarStyle.SEGMENTED_12);
 		EnemyBossBar.setVisible(true);
 		EnemyBossBar.setProgress(1.0);
 		List<Player> Players = new ArrayList<Player>();
@@ -79,7 +79,7 @@ public class GangMember {
 		ItemStack Boots = new ItemStack(Material.LEATHER_BOOTS);
 		
 		LeatherArmorMeta BootsMeta = (LeatherArmorMeta) Boots.getItemMeta();
-		new Speak(BootsMeta,"&c Red Wolves Vest");
+		new Speak(BootsMeta,"&c 红狼背心");
 		BootsMeta.setColor(Color.RED);
 		BootsMeta.setUnbreakable(true);
 		Boots.setItemMeta(BootsMeta);
@@ -87,7 +87,7 @@ public class GangMember {
 		ItemStack Leggings = new ItemStack(Material.LEATHER_LEGGINGS);
 		
 		LeatherArmorMeta LeggingsMeta = (LeatherArmorMeta) Leggings.getItemMeta();
-		new Speak(LeggingsMeta,"&c Red Wolves Jeans");
+		new Speak(LeggingsMeta,"&c 红狼牛仔裤");
 		LeggingsMeta.setColor(Color.RED);
 		LeggingsMeta.setUnbreakable(true);
 		Leggings.setItemMeta(LeggingsMeta);
@@ -96,7 +96,7 @@ public class GangMember {
 		Chestplate.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 20);
 		
 		LeatherArmorMeta ChestplateMeta = (LeatherArmorMeta) Chestplate.getItemMeta();
-		new Speak(ChestplateMeta,"&c Red Wolves Vest");
+		new Speak(ChestplateMeta,"&c 红狼背心");
 		ChestplateMeta.setColor(Color.BLACK);
 		ChestplateMeta.setUnbreakable(true);
 		Chestplate.setItemMeta(ChestplateMeta);
@@ -129,7 +129,7 @@ public class GangMember {
 						case 0:
 							break;
 						case 1:
-							new Speak(z,z.getNearbyEntities(15.0, 15.0, 15.0),"&c&l[&k|||&r &4&l⚠ Red Wolves Gangster ⚠&r &c&l&k|||&r&c&l]:&r &cCome over here!");
+							new Speak(z,z.getNearbyEntities(15.0, 15.0, 15.0),"&c&l[&k|||&r &4&l⚠ 红狼黑帮 ⚠&r &c&l&k|||&r&c&l]:&r &c过来这里!");
 							z.getTarget().teleport(z.getLocation().add(new Random().nextInt(3), 0, new Random().nextInt(3)));
 							z.getWorld().playSound(z.getTarget().getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 0.5F, 0.5F);
 							z.setInvulnerable(true);
@@ -143,7 +143,7 @@ public class GangMember {
 								}
 							}
 						case 2:
-							new Speak(z,z.getNearbyEntities(15.0, 15.0, 15.0),"&c&l[&k|||&r &4&l⚠ Red Wolves Gangster ⚠&r &c&l&k|||&r&c&l]:&r &cJust die!");
+							new Speak(z,z.getNearbyEntities(15.0, 15.0, 15.0),"&c&l[&k|||&r &4&l⚠ 红狼黑帮 ⚠&r &c&l&k|||&r&c&l]:&r &c去死吧!");
 							for(int i=0;i<4;i++) {
 								LlamaSpit LaserProjectile = z.launchProjectile(LlamaSpit.class);
 								Vector source = z.getLocation().getDirection().normalize().multiply(50);

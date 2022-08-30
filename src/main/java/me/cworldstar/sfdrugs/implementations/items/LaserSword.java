@@ -48,7 +48,7 @@ public class LaserSword extends SimpleSlimefunItem<WeaponUseHandler> implements 
 					}
 				} 
 			} else if(this.getItemCharge(i) <= e.getFinalDamage() * 2){
-				new Speak(p,"&7You attempt to swing with a sheathed hilt. It does not work.");
+				new Speak(p,"&7你试图用带鞘的剑柄挥棒。它不起作用。");
 				e.setDamage(0);
 				e.setCancelled(true);
 			}

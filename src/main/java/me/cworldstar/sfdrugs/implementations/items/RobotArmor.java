@@ -46,7 +46,7 @@ public class RobotArmor extends CustomArmorPiece implements ProtectiveArmor,Radi
 		Inventory I = p.getInventory();
 		int Wearing = 0;
 		for (int i = 5; i <= 8 ;i++) {
-			if (I.getItem(i).getItemMeta().getDisplayName().contains("Corporate Security Robot")) {
+			if (I.getItem(i).getItemMeta().getDisplayName().contains("企业安全机器人")) {
 				Wearing += 1;
 			}
 		}
