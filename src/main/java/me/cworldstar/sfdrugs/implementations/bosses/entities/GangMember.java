@@ -26,6 +26,7 @@ import org.bukkit.inventory.ItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.cworldstar.sfdrugs.SFDrugs;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -34,6 +35,7 @@ import org.bukkit.util.Vector;
 
 import me.cworldstar.sfdrugs.implementations.loot.CorporationEnemyLootTable;
 import me.cworldstar.sfdrugs.utils.ParticleUtils;
+import me.cworldstar.sfdrugs.utils.RandomUtils;
 import me.cworldstar.sfdrugs.utils.Speak;
 import net.md_5.bungee.api.ChatColor;
 
@@ -42,7 +44,9 @@ public class GangMember {
 		z.setCustomName(ChatColor.translateAlternateColorCodes('&', "&c&l&k|||&r &4&l⚠ 红狼黑帮 ⚠&r &c&l&k|||&r"));
 		z.setMaxHealth(750.0);
 		z.setHealth(750.0);
-		z.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE,999999,5));
+		z.setAdult();
+		z.setMetadata("SFDRUGS_CUSTOM_MOB",new FixedMetadataValue(plugin,"red_wolves_gangster"));
+		z.setCanPickupItems(false);		
 		z.setLootTable(new CorporationEnemyLootTable(plugin));
 		BossBar EnemyBossBar = Bukkit.getServer().createBossBar(ChatColor.translateAlternateColorCodes('&',"&c&l&k|||&r &4&l⚠ 红狼黑帮 ⚠&r &c&l&k|||&r"),BarColor.RED, BarStyle.SEGMENTED_12);
 		EnemyBossBar.setVisible(true);
@@ -75,7 +79,7 @@ public class GangMember {
 		}.runTaskTimer(plugin, 0L, 20L);
 		
 		
-		ItemStack ZombieHead = SlimefunUtils.getCustomHead("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmYzNjhhODZjZmZkMjllYTI1YjFhYjdlNTVhYzFkMDQ5NGY3MjZhODUzZmRiNDA0MmU3YzcxY2QwNmI5NmQzNyJ9fX0=");
+		ItemStack ZombieHead = SlimefunUtils.getCustomHead("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjc2MzQzZjU3NzYwMTY3ODNjMDJmZTdiNDU3NjMxYWU2YWJjZWIwMjYzOTQwODBhZmNjMzM1NDIxYjJjYzZiIn19fQ==");
 		ItemStack Boots = new ItemStack(Material.LEATHER_BOOTS);
 		
 		LeatherArmorMeta BootsMeta = (LeatherArmorMeta) Boots.getItemMeta();
@@ -123,7 +127,7 @@ public class GangMember {
 			public void run() {
 				if(z.isDead()) {
 					this.cancel();
-				} else if(z.hasAI() & z.getTarget() != null & z.getTarget() instanceof LivingEntity) {
+				} else if(z.hasAI() & z.getTarget() != null && z.getTarget() instanceof LivingEntity) {
 					int RandomNumber = new Random().nextInt(3);
 					switch(RandomNumber) {
 						case 0:
@@ -146,6 +150,7 @@ public class GangMember {
 							new Speak(z,z.getNearbyEntities(15.0, 15.0, 15.0),"&c&l[&k|||&r &4&l⚠ 红狼黑帮 ⚠&r &c&l&k|||&r&c&l]:&r &c去死吧!");
 							for(int i=0;i<4;i++) {
 								LlamaSpit LaserProjectile = z.launchProjectile(LlamaSpit.class);
+								LaserProjectile.setMetadata("SFDRUGS_IS_LASER_PROJECTILE", new FixedMetadataValue(plugin,RandomUtils.nextInt(10).floatValue()));
 								Vector source = z.getLocation().getDirection().normalize().multiply(50);
 								Vector v = z.getTarget().getLocation().toVector().subtract(source);
 								BukkitTask LaserProjectileVelocityTask = new BukkitRunnable() {
@@ -171,9 +176,11 @@ public class GangMember {
 										}
 										this.cancel();
 									}
-								}.runTaskLater(plugin, 100L); // Remove after 10 seconds
+								}.runTaskLater(plugin, 100L); // Remove after 5 seconds
 								break;
 							}
+						default:
+							break;
 					}
 				}
 			}

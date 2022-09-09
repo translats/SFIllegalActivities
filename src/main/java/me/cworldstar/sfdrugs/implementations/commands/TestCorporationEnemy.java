@@ -9,7 +9,9 @@ import org.bukkit.entity.Zombie;
 
 import me.cworldstar.sfdrugs.SFDrugs;
 import me.cworldstar.sfdrugs.implementations.bosses.CorporationMobZone;
+import me.cworldstar.sfdrugs.implementations.bosses.entities.EscapedTestSubject;
 import me.cworldstar.sfdrugs.implementations.bosses.entities.GangMember;
+import me.cworldstar.sfdrugs.implementations.bosses.entities.SmallerGangMember;
 
 public class TestCorporationEnemy implements CommandExecutor  {
 	private SFDrugs plugin;
@@ -20,14 +22,24 @@ public class TestCorporationEnemy implements CommandExecutor  {
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if(sender instanceof Player) {
 			Player p = sender.getServer().getPlayer(sender.getName());
-			switch(args[0]) {
-			case "corporationEnemy":
-				new CorporationMobZone(plugin,p.getWorld(),p.getLocation());
-				break;
-			case "gangMember":
-				new GangMember(plugin,(Zombie) p.getWorld().spawnEntity(p.getLocation(),EntityType.ZOMBIE));
-			default:
-				return false;
+			sender.sendMessage(args[0]);
+			switch(args[0].toLowerCase()) {
+				case "corporate_security_robot":
+					new CorporationMobZone(plugin,p.getWorld(),p.getLocation());
+					break;
+				case "red_wolves_gangster":
+					new GangMember(plugin,(Zombie) p.getWorld().spawnEntity(p.getLocation(),EntityType.ZOMBIE));
+					break;
+				case "escaped_test_subject":
+					new EscapedTestSubject(plugin,(Zombie) p.getWorld().spawnEntity(p.getLocation(),EntityType.ZOMBIE));
+					break;
+	
+				case "red_wolves_trainee":
+					new SmallerGangMember(plugin,(Zombie) p.getWorld().spawnEntity(p.getLocation(),EntityType.ZOMBIE));
+					break;
+				default:
+					sender.sendMessage("Invalid test parameter.");
+					break;
 			}
 			return true;
 		}

@@ -14,20 +14,19 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.cworldstar.sfdrugs.SFDrugs;
 import me.cworldstar.sfdrugs.utils.Items;
 
-public class CorporationEnemyLootTable implements LootTable {
-	
+public class SmallerGangMemberLootTable implements LootTable {
+
 	private SFDrugs plugin;
 	private Collection<ItemStack> lootTable = new ArrayList<ItemStack>();
 
-	public CorporationEnemyLootTable(SFDrugs plugin) {
+	public SmallerGangMemberLootTable(SFDrugs plugin) {
 		this.plugin = plugin;
-
 	}
 	
 	@Override
 	public NamespacedKey getKey() {
 		// TODO Auto-generated method stub
-		return new NamespacedKey(plugin,"SFDRUGS_CORPORATIONENEMY");
+		return new NamespacedKey(plugin,"SmallerGangMember");
 	}
 
 	@Override
@@ -37,22 +36,17 @@ public class CorporationEnemyLootTable implements LootTable {
 		for(int i=0;i<items;i++) {
 			switch(num) {
 				case 1:
-					this.lootTable.add(new CustomItemStack(Items.CORPORATION_ROBOT_HELMET));
+					this.lootTable.add(new CustomItemStack(Items.MONEY,2));
 					break;
 				case 2:
-					this.lootTable.add(new CustomItemStack(Items.CORPORATION_ROBOT_LEGGINGS));
 					break;
 				case 3:
-					this.lootTable.add(new CustomItemStack(Items.CORPORATION_ROBOT_CHESTPLATE));
 					break;
 				case 4:
-					this.lootTable.add(new CustomItemStack(Items.CORPORATION_ROBOT_BOOTS));
 					break;
 				case 5:
-					this.lootTable.add(new CustomItemStack(Items.CORPORATE_ANDROID_CORE,1));	
 					break;
 				case 6:
-					this.lootTable.add(new CustomItemStack(Items.MONEY,2));
 					break;
 				case 7:
 					this.lootTable.add(new CustomItemStack(Items.MONEY,2));

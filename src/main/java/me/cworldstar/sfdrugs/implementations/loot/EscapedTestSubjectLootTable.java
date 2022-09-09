@@ -14,12 +14,12 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.cworldstar.sfdrugs.SFDrugs;
 import me.cworldstar.sfdrugs.utils.Items;
 
-public class CorporationEnemyLootTable implements LootTable {
+public class EscapedTestSubjectLootTable implements LootTable {
 	
 	private SFDrugs plugin;
 	private Collection<ItemStack> lootTable = new ArrayList<ItemStack>();
 
-	public CorporationEnemyLootTable(SFDrugs plugin) {
+	public EscapedTestSubjectLootTable(SFDrugs plugin) {
 		this.plugin = plugin;
 
 	}
